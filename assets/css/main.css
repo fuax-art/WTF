@@ -2188,14 +2188,16 @@ input, select, textarea {
 			}
 
 		.image.avatar {
-			border-radius: 100%;
-			overflow: hidden;
+			display: flex; /* Use flexbox for horizontal alignment */
+			justify-content: space-between; /* Space images evenly */
+			align-items: center; /* Align images vertically in the center */
 		}
 
 			.image.avatar img {
-				border-radius: 100%;
-				display: block;
-				width: 100%;
+				width: 150px; /* Set a fixed width for all images */
+				height: 150px; /* Set a fixed height for all images */
+				border-radius: 50%; /* Ensure the images remain circular */
+				object-fit: cover; /* Ensure the images fit within the circle */
 			}
 
 		.image.main {
@@ -2207,6 +2209,14 @@ input, select, textarea {
 			.image.main img {
 				border-radius: 0;
 			}
+
+	.image-row {
+		display: flex; /* Use flexbox for horizontal alignment */
+		justify-content: space-around; /* Space images evenly across the row */
+		align-items: center; /* Align images vertically in the center */
+		width: 100%; /* Ensure the container spans the full width of the page */
+		margin: 20px 0; /* Add some spacing above and below the row */
+	}
 
 /* List */
 
