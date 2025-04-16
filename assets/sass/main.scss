@@ -25,6 +25,29 @@
 
 	$size-header: 23em;
 
+// Define the new color palette
+$color-bg: #000000; // Black
+$color-burnt-orange: #cc5500; // Burnt Orange
+$color-bright-teal: #00d9d9; // Bright Teal
+$color-grey: #808080; // Grey
+$color-fg: #ffffff; // White for text
+
+// Update the _palette function or variables
+@function _palette($key, $type: null) {
+  @if $key == 'bg' {
+    @return $color-bg;
+  } @else if $key == 'accent1' {
+    @return $color-burnt-orange;
+  } @else if $key == 'accent2' {
+    @return $color-bright-teal;
+  } @else if $key == 'border' {
+    @return $color-grey;
+  } @else if $key == 'fg' {
+    @return $color-fg;
+  }
+  // Add other mappings as needed
+}
+
 // Reset.
 // Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain)
 
@@ -110,6 +133,7 @@
 
 	body {
 		background: _palette(bg);
+		color: _palette(fg);
 
 		// Stops initial animations until page loads.
 			&.is-preload {
@@ -122,7 +146,6 @@
 	}
 
 	body, input, select, textarea {
-		color: _palette(fg);
 		font-family: _font(family);
 		font-size: 16pt;
 		font-weight: _font(weight);
@@ -132,12 +155,12 @@
 	a {
 		@include vendor('transition', ('color #{_duration(transition)} ease-in-out', 'border-color #{_duration(transition)} ease-in-out'));
 		border-bottom: solid 1px _palette(border2);
-		color: inherit;
+		color: _palette(accent2);
 		text-decoration: none;
 
 		&:hover {
 			border-bottom-color: transparent;
-			color: _palette(accent1, bg) !important;
+			color: _palette(accent1) !important;
 		}
 	}
 
@@ -155,7 +178,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: _palette(fg-bold);
+		color: _palette(accent1);
 		font-weight: _font(weight-bold);
 		line-height: 1em;
 		margin: 0 0 (_size(element-margin) * 0.25) 0;
@@ -1021,10 +1044,10 @@
 	.button {
 		@include vendor('appearance', 'none');
 		@include vendor('transition', ('background-color #{_duration(transition)} ease-in-out', 'color #{_duration(transition)} ease-in-out'));
-		background-color: _palette(accent2, bg);
+		background-color: _palette(accent1);
 		border-radius: _size(border-radius);
 		border: 0;
-		color: _palette(accent2, fg-bold) !important;
+		color: _palette(fg) !important;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: _font(weight-bold);
@@ -1036,12 +1059,12 @@
 		white-space: nowrap;
 
 		&:hover {
-			background-color: lighten(_palette(accent2, bg), 5);
-			color: _palette(accent2, fg-bold) !important;
+			background-color: lighten(_palette(accent1), 10%);
+			color: _palette(fg) !important;
 		}
 
 		&:active {
-			background-color: darken(_palette(accent2, bg), 5);
+			background-color: darken(_palette(accent1), 5);
 		}
 
 		&.icon {
@@ -1296,9 +1319,8 @@
 /* Footer */
 
 	#footer {
-		background: #fafafa;
-		border-top: 0;
-		color: #c0c0c0;
+		background: _palette(bg);
+		color: _palette(border);
 		overflow: hidden;
 		padding: 4em 0 2em 0;
 
