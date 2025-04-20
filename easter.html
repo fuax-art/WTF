@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The whole fuckin sando</title>
+    <link rel="stylesheet" href="assets/css/main.css" /> 
+</head>
+<body>
+  
+            
+     <div class="container">
+        <article class="blog-post">
+            <h1 style="text-align: center; font-weight: bold; text-decoration: underline; color: rgb(255, 0, 0);">The Weight of Their Gaze, The Fire in My Veins</h1>
+            <pre style="white-space: pre-wrap; word-wrap: break-word;">
+               
+                Familiar stiffness gripped my limbs.
+                
+                I unfolded myself from the cramped confines of my car. 
+                
+                A jolt of pins and needles shoot through my legs as the blood reluctantly remembers its purpose. 
+                
+                A daily ritual, 
+                
+                 this awkward re-entry into the world, 
+                  
+                  a stark reminder of the fragility of shelter. 
+                
+                But today,
+                
+                the physical discomfort is quickly overshadowed by a different kind of ache 
+                
+                 – the slow burn of anger.
+                
+                Across the street, the air buzzed with the cheerful cadence of post-Easter service chatter. 
+                
+                Crisp spring outfits mingled with the vibrant hues of freshly bloomed flowers. Laughter drifted on the breeze, a stark contrast to the quiet grief that clung to me like a second skin. 
+                
+                And then came the stares. The subtle shifts in their conversations as I became the unwanted subject. 
+                
+                The hushed whispers that felt amplified in the otherwise bright morning.
+                
+                A bitter taste rose in my throat. 
+                
+                Hypocrisy, 
+                
+                sharp and unwelcome, pricked at my composure. 
+                
+                Here they were, basking in the glow of resurrection and renewal, yet their eyes held a distinct lack of recognition, a clear distinction between "us" and "them." 
+                
+                Didn't their scriptures preach of radical acceptance? Didn't their savior break bread with the marginalized, the outcasts? 
+                
+                This very week, they commemorate a Jesus who embraced a betrayer with a kiss and humbly washed the feet of all his disciples, knowing full well the darkness that resided among them.
+                
+                And yet, here I stood, a silent testament to a different kind of devotion.
+                
+                    This week, the world felt a little dimmer, the silence a little heavier. 
+                    
+                My best friend, a soul who embodied kindness and generosity, passed away. 
+                
+                This weekend, the air should have been filled with the joy of his birthday. Instead, it's thick with the raw ache of his absence. 
+                
+                And in a way that feels more profound than any religious obligation, I find myself compelled to honor his memory through acts of giving, of extending the very grace that these churchgoers so readily withhold.
+                
+                I, the non-Christian, find myself wrestling with a deeper understanding of selfless love this week than those who just celebrated its supposed ultimate act. 
+                
+                The irony is a cruel twist, a sharp jab that fuels the fire in my veins.
+                
+                Perhaps they see only the surface – 
+                
+                the disheveled appearance, 
+                
+                the car as a temporary home. 
+                
+                They miss the beating heart within, 
+                
+                the grief that mirrors their own,
+                
+                the quiet acts of love that ripple outwards in a world that desperately needs them.
+                
+                The anger simmers, a potent cocktail of frustration and hurt. 
+                
+                But beneath it, a resolve hardens.
+                
+                 I will not let their narrow vision define me. 
+                
+                 I will carry the memory of my friend with a fierce tenderness,
+                
+                  I will continue to offer what I can, 
+                 
+                   not for their approval, 
+                  
+                     but in honor of a spirit that truly understood the meaning of compassion.
+                     
+                       Let their whispers fade into the background. 
+                      
+                         My actions will speak a truth 
+                        
+                          far louder than their 
+                        
+                                                       judgmental silence.
+                </pre>
+        </article>
+        <section class="visitor-comments">
+            <h2>Slow Burn</h2>
+            <textarea class="comment-textarea" placeholder="Speak Truth"></textarea>
+            <button class="submit-comment">Fire Away</button>
+            <div class="comments-section">
+                <!-- Comments will be dynamically added here -->
+            </div>
+            <script>
+                document.querySelector('.submit-comment').addEventListener('click', function() {
+                    const textarea = document.querySelector('.comment-textarea');
+                    const commentText = textarea.value.trim();
+                    
+                    if (commentText) {
+                        const commentPreview = document.createElement('div');
+                        commentPreview.className = 'comment-preview';
+                        commentPreview.innerHTML = `
+                            <p>${commentText.substring(0, 100)}...</p>
+                            <button class="view-full-comment">View Full Story</button>
+                        `;
+
+                        const fullCommentModal = document.createElement('div');
+                        fullCommentModal.className = 'full-comment-modal';
+                        fullCommentModal.innerHTML = `
+                            <div class="modal-content">
+                                <button class="close-modal">&times;</button>
+                                <div contenteditable="true" class="full-comment-text">${commentText}</div>
+                            </div>
+                        `;
+                        fullCommentModal.style.display = 'none';
+
+                        commentPreview.querySelector('.view-full-comment').addEventListener('click', function() {
+                            fullCommentModal.style.display = 'block';
+                        });
+
+                        fullCommentModal.querySelector('.close-modal').addEventListener('click', function() {
+                            fullCommentModal.style.display = 'none';
+                        });
+
+                        document.querySelector('.comments-section').appendChild(commentPreview);
+                        document.body.appendChild(fullCommentModal);
+
+                        textarea.value = ''; // Clear the textarea
+                    } else {
+                        alert('Please write a comment before submitting.');
+                    }
+                });
+            </script>
+            <style>
+                .comment-preview {
+                    border: 1px solid #cf6100;
+                    padding: 10px;
+                    margin: 10px 0;
+                    background-color: #000000;
+                }
+                .full-comment-modal {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .modal-content {
+                    background: #fff;
+                    padding: 20px;
+                    border-radius: 5px;
+                    width: 80%;
+                    max-width: 600px;
+                    position: relative;
+                }
+                .close-modal {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: none;
+                    border: none;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+                .full-comment-text {
+                    border: 1px solid #ff6f00;
+                    padding: 10px;
+                    min-height: 200px;
+                    outline: none;
+                }
+                .full-comment-text:focus {
+                    border-color: #ff4000;
+                }
+            </style>
+        </section>
+    </div>
+    <script>
+        window.onload = function() {
+            alert("!!!WARNING!!!!: This page contains sensitive content along with some adult language, so if you are kind of a little bitch maybe just leave..");
+        };
+    </script>
+</body>
+</html>
