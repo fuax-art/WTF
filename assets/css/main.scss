@@ -1,0 +1,18 @@
+$brand-bg: #000;
+$brand-text: #00FF00;
+$brand-accent: #FF0080;
+$brand-font: 'VCR OSD Mono', monospace;
+
+body {
+  background-color: $brand-bg !important;
+  color: $brand-text !important;
+  font-family: $brand-font, monospace !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $brand-accent !important;
+  text-shadow: 0 0 10px $brand-accent;
+  font-family: $brand-font, monospace;
+}
+
+// ...repeat overrides as above using Sass variables
