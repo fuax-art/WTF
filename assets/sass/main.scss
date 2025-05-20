@@ -26,11 +26,11 @@
 	$size-header: 23em;
 
 // Define the new color palette
-$color-bg: #000000; // Black
-$color-burnt-orange: #cc5500; // Burnt Orange
-$color-bright-teal: #00d9d9; // Bright Teal
-$color-grey: #808080; // Grey
-$color-fg: #ffffff; // White for text
+$color-bg: #000000;         // Black background
+$color-burnt-orange: #FF0080; // Pink accent
+$color-bright-teal: #00FF00;  // Neon green accent
+$color-grey: #313030;       // Grey (leave as is)
+$color-fg: #00FF00;  
 
 // Update the _palette function or variables
 @function _palette($key, $type: null) {
